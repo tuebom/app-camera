@@ -1,20 +1,13 @@
-app.controller('MainCtrl', function ($scope, alarmService) {
-
-  init();
-
-  function init() {
-    $scope.alarms = alarmService.getAlarms();
-    console.log('MainCtrl init');
-  };
+app.controller('MainCtrl', function ($scope) {
 
 });
 
-app.controller('PictureCtrl', function ($scope, $routeParams, alarmService) {
+app.controller('PictureCtrl', function ($scope, $routeParams) {
 
     $scope.takePicture = function () {
       var options = {
         quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
+        destinationType: Camera.DestinationType.DATA_URI,
         sourceType: Camera.PictureSourceType.CAMERA
       };
 
@@ -29,7 +22,7 @@ app.controller('PictureCtrl', function ($scope, $routeParams, alarmService) {
 
 });
 
-app.controller('VideoCtrl', function ($scope, $location, alarmService) {
+app.controller('VideoCtrl', function ($scope, $location) {
 
 });
 
