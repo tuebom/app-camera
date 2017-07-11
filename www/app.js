@@ -18,7 +18,7 @@ var PhoneGap = {
      },
      bind: function() {
         document.addEventListener('deviceready', this.deviceready, false);
-        document.addEventListener('backbutton', this.onBackButton, false);
+        //document.addEventListener('backbutton', this.onBackButton, false);
      },
      deviceready: function() {
          // note that this is an event handler so the scope is that of the event
@@ -30,13 +30,13 @@ var PhoneGap = {
         mediaType = navigator.camera.MediaType;
         
      },
-      onBackButton: function(e) {
+      /*onBackButton: function(e) {
         if (history.length > 0)
           window.history.back();
-        } /*else {
+        } else {
           navigator.app.exitApp();
-        }*/
-      },
+        }
+      },*/
      report: function(id) { 
          console.log("PhoneGap Report:" + id);
          // hide the .pending <p> and show the .complete <p>
