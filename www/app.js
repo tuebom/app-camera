@@ -33,10 +33,9 @@ var PhoneGap = {
       onBackButton: function(e) {
         if (history.length > 0)
           window.history.back();
-        } else {
-          navigator.app.clearHistory();
+        } /*else {
           navigator.app.exitApp();
-        }
+        }*/
       },
      report: function(id) { 
          console.log("PhoneGap Report:" + id);
