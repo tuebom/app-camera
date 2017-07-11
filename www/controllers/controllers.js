@@ -7,7 +7,7 @@ app.controller('PictureCtrl', function ($scope, $routeParams) {
     $scope.takePicture = function () {
       var options = {
         quality: 50,
-        destinationType: Camera.DestinationType.DATA_URI,
+        destinationType: Camera.DestinationType.FILE_URI,
         sourceType: Camera.PictureSourceType.CAMERA
       };
 
