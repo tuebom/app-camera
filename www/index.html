@@ -10,6 +10,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">    
 
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src *  'unsafe-inline'; script-src *  'unsafe-inline'; media-src *">
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/main.css -->
     <!-- <link rel="stylesheet" href="styles/bootstrap.css"> -->
@@ -20,6 +22,9 @@
   <body ng-app="SPAApp">
     <!-- Add your site or application content here -->
     <div class="container" ng-view></div>
+
+    <!-- ng cordova js -->
+    <script src="ng-cordova.js"></script>
 
     <script src="cordova.js"></script>
     <script src="components/angular.js"></script>
