@@ -23,13 +23,13 @@ var PhoneGap = {
          // note that this is an event handler so the scope is that of the event
          // so we need to call app.report(), and not this.report()
         //PhoneGap.report('deviceready');
-        document.addEventListener('backbutton', this.onBackButton, false);
+        //document.addEventListener('backbutton', this.onBackButton, false);
 
         pictureSource = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
         mediaType = navigator.camera.MediaType;
         
-     },
+     }/*,
       onBackButton: function(e) {
         e.preventDefault();
         
@@ -39,7 +39,7 @@ var PhoneGap = {
           navigator.app.exitApp();
         }
       }
-     /*report: function(id) { 
+     report: function(id) { 
          console.log("PhoneGap Report:" + id);
          // hide the .pending <p> and show the .complete <p>
          // document.querySelector('#' + id + ' .pending').className += ' hide';
