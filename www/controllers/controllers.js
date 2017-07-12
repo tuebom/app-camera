@@ -8,7 +8,8 @@ app.controller('VideoCtrl', function ($scope, $cordovaCamera) {
 
 app.controller('PictureCtrl', function ($scope, $cordovaCamera) {
 
-    $scope.takePicture = function () {
+  document.addEventListener('deviceready', function () {
+    //$scope.takePicture = function () {
       var options = {
         quality: 50,
         destinationType: Camera.DestinationType.DATA_URL,
@@ -18,7 +19,7 @@ app.controller('PictureCtrl', function ($scope, $cordovaCamera) {
         targetWidth: 250,
         targetHeight: 250,
         popoverOptions: CameraPopoverOptions,
-        saveToPhotoAlbum: true
+        saveToPhotoAlbum: false
       };
 
       // udpate camera image directive
@@ -28,7 +29,8 @@ app.controller('PictureCtrl', function ($scope, $cordovaCamera) {
         console.log('Failed because: ');
         console.log(err);
       });
-    };
+    //};
+  }, false);
 
 });
 
