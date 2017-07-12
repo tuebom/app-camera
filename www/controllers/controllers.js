@@ -2,13 +2,13 @@ angular.module('camera.controllers', [])
 
 .controller('MainCtrl', function ($scope, $cordovaCamera) {
 
-});
+})
 
-app.controller('VideoCtrl', function ($scope, $cordovaCamera) {
+.controller('VideoCtrl', function ($scope, $cordovaCamera) {
 
-});
+})
 
-app.controller('PictureCtrl', function ($scope, $cordovaCamera) {
+.controller('PictureCtrl', function ($scope, $cordovaCamera) {
 
   document.addEventListener('deviceready', function () {
     //$scope.takePicture = function () {
@@ -34,11 +34,11 @@ app.controller('PictureCtrl', function ($scope, $cordovaCamera) {
     //};
   }, false);
 
-});
+})
 
 .controller('VideoCtrl', function ($scope, $cordovaCamera) {
 
-});
+})
 
 .controller('UploadCtrl', function ($scope, $cordovaFileTransfer) {
 
