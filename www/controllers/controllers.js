@@ -1,14 +1,24 @@
-app.controller('MainCtrl', function ($scope) {
+app.controller('MainCtrl', function ($scope, $cordovaCamera) {
 
 });
 
-app.controller('PictureCtrl', function ($scope, $routeParams) {
+app.controller('VideoCtrl', function ($scope, $cordovaCamera) {
+
+});
+
+app.controller('PictureCtrl', function ($scope, $cordovaCamera) {
 
     $scope.takePicture = function () {
       var options = {
         quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI,
-        sourceType: Camera.PictureSourceType.CAMERA
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.CAMERA,
+        allowEdit: true,
+        encodingType: Camera.EncodingType.JPEG,
+        targetWidth: 250,
+        targetHeight: 250,
+        popoverOptions: CameraPopoverOptions,
+        saveToPhotoAlbum: true
       };
 
       // udpate camera image directive
@@ -16,13 +26,13 @@ app.controller('PictureCtrl', function ($scope, $routeParams) {
         $scope.cameraimage = "data:image/jpeg;base64," + imageData;
       }, function (err) {
         console.log('Failed because: ');
-		console.log(err);
+        console.log(err);
       });
     };
 
 });
 
-app.controller('VideoCtrl', function ($scope, $location) {
+app.controller('VideoCtrl', function ($scope, $cordovaCamera) {
 
 });
 

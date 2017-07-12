@@ -55,7 +55,7 @@ $(function() {
   FastClick.attach(document.body);
 });
 
-var app = angular.module('SPAApp', []);
+var app = angular.module('SPAApp', ['ngCordova']);
 
 app.config(function ($routeProvider) {
   $routeProvider
