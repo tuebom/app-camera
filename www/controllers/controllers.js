@@ -1,4 +1,6 @@
-app.controller('MainCtrl', function ($scope, $cordovaCamera) {
+angular.module('camera.controllers', [])
+
+.controller('MainCtrl', function ($scope, $cordovaCamera) {
 
 });
 
@@ -34,11 +36,11 @@ app.controller('PictureCtrl', function ($scope, $cordovaCamera) {
 
 });
 
-app.controller('VideoCtrl', function ($scope, $cordovaCamera) {
+.controller('VideoCtrl', function ($scope, $cordovaCamera) {
 
 });
 
-app.controller('UploadCtrl', function ($scope, $cordovaFileTransfer) {
+.controller('UploadCtrl', function ($scope, $cordovaFileTransfer) {
 
     $scope.upload = function() {
         var options = {
