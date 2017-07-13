@@ -12,6 +12,26 @@ var pictureSource;
 var destinationType; 
 var mediaType;
 
+document.addEventListener("deviceready", init, false);
+
+function init() {
+	
+  pictureSource = navigator.camera.PictureSourceType;
+  destinationType = navigator.camera.DestinationType;
+  mediaType = navigator.camera.MediaType;
+  
+    document.addEventListener("backbutton", function(e){
+       if($.mobile.activePage.is('#homepage')){
+           e.preventDefault();
+           navigator.app.exitApp();
+       }
+       else {
+           navigator.app.backHistory()
+       }
+    }, false);
+}		
+
+
 var PhoneGap = {
      initialize: function() {
          this.bind();
@@ -25,9 +45,6 @@ var PhoneGap = {
         //PhoneGap.report('deviceready');
         //document.addEventListener('backbutton', this.onBackButton, false);
 
-        pictureSource = navigator.camera.PictureSourceType;
-        destinationType = navigator.camera.DestinationType;
-        mediaType = navigator.camera.MediaType;
         
      }/*,
       onBackButton: function(e) {
@@ -55,7 +72,7 @@ $(function() {
   FastClick.attach(document.body);
 });
 
-var app = angular.module('SPAApp', ['camera.controllers', 'ngCordova']);
+var app = angular.module('SPAApp', ['camera.controllers']);
 
 app.config(function ($routeProvider) {
   $routeProvider
@@ -71,9 +88,13 @@ app.config(function ($routeProvider) {
       templateUrl: 'partials/take-video.html',
       controller: 'VideoCtrl'
     })
-    .when('/upload', {
-      templateUrl: 'partials/upload.html',
-      controller: 'UploadCtrl'
+    .when('/upload-picture', {
+      templateUrl: 'partials/upload-picture.html',
+      controller: 'UploadPictureCtrl'
+    })
+    .when('/upload-video', {
+      templateUrl: 'partials/upload-video.html',
+      controller: 'UploadVideoCtrl'
     })
     .when('/setting', {
       templateUrl: 'partials/setting.html',
