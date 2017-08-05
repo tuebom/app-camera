@@ -20,8 +20,8 @@
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.1" />
     <!--<plugin name="cordova-plugin-camera" source="npm" />
     <plugin name="cordova-plugin-device" source="npm" />
-    <plugin name="cordova-plugin-media" source="npm" />
-    <plugin name="cordova-plugin-file" source="npm" />-->
+    <plugin name="cordova-plugin-media" source="npm" />-->
+    <plugin name="cordova-plugin-file" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
 
     <icon height="512" src="res/icon/cordova_512.png" width="512" />

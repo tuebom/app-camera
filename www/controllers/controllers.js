@@ -55,6 +55,7 @@ angular.module('camera.controllers', [])
     options.fileKey = "file";
     options.fileName = $scope.filepath.substr($scope.filepath.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
+    options.chunkedMode = false;
 
     var params = {};
     // params.value1 = "test";
@@ -107,6 +108,7 @@ angular.module('camera.controllers', [])
     options.fileKey = "file";
     options.fileName = $scope.filepath.substr($scope.filepath.lastIndexOf('/') + 1);
     options.mimeType = "video/mp4";
+    options.chunkedMode = false;
 
     var params = {};
     // params.value1 = "test";
