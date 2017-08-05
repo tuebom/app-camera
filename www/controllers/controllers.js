@@ -63,7 +63,7 @@ angular.module('camera.controllers', [])
     options.params = params;
 
     var ft = new FileTransfer();
-    ft.upload(fileURL, encodeURI("http://212.24.111.23/upload.php"), function (r) {
+    ft.upload($scope.filepath, encodeURI("http://212.24.111.23/upload.php"), function (r) { //fileURL
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);
@@ -115,7 +115,7 @@ angular.module('camera.controllers', [])
     options.params = params;
 
     var ft = new FileTransfer();
-    ft.upload(fileURL, encodeURI("http://212.24.111.23/upload.php"), function (r) {
+    ft.upload($scope.filepath, encodeURI("http://212.24.111.23/upload.php"), function (r) {
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);
@@ -145,7 +145,7 @@ angular.module('camera.controllers', [])
     options.params = params;
 
     var ft = new FileTransfer();
-    ft.upload(fileURL, encodeURI("http://212.24.111.23/upload.php"), function (r) {
+    ft.upload($scope.filepath, encodeURI("http://212.24.111.23/upload.php"), function (r) {
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);
@@ -191,7 +191,7 @@ angular.module('camera.controllers', [])
     options.params = params;
 
     var ft = new FileTransfer();
-    ft.upload(fileURL, encodeURI("http://212.24.111.23/upload.php"), function (r) {
+    ft.upload($scope.filepath, encodeURI("http://212.24.111.23/upload.php"), function (r) {
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);

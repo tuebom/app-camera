@@ -2,3 +2,4 @@ node_modules/
 www_backup/
 server.js
 upload.php
+.gitignore
