@@ -66,10 +66,10 @@ angular.module('camera.controllers', [])
     var ft = new FileTransfer();
     ft.upload($scope.filepath, encodeURI("http://212.24.111.23/upload.php"), function (r) { //fileURL
         console.log("Code = " + r.responseCode);
-        console.log("Response = " + r.response);
-        console.log("Sent = " + r.bytesSent);
+        console.log("Response = " + r.message);
+        //console.log("Sent = " + r.bytesSent);
         
-        alert(r.response);
+        alert(r.message);
         
     }, function (error) {
         alert("An error has occurred: Code = " + error.code);
@@ -119,8 +119,10 @@ angular.module('camera.controllers', [])
     var ft = new FileTransfer();
     ft.upload($scope.filepath, encodeURI("http://212.24.111.23/upload.php"), function (r) {
         console.log("Code = " + r.responseCode);
-        console.log("Response = " + r.response);
-        console.log("Sent = " + r.bytesSent);
+        console.log("Response = " + r.message);
+        //console.log("Sent = " + r.bytesSent);
+        
+        alert(r.message);
         
     }, function (error) {
         alert("An error has occurred: Code = " + error.code);
@@ -139,6 +141,7 @@ angular.module('camera.controllers', [])
     options.fileKey = "file";
     options.fileName = $scope.filepath.substr($scope.filepath.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
+    options.chunkedMode = false;
 
     var params = {};
     // params.value1 = "test";
@@ -149,8 +152,10 @@ angular.module('camera.controllers', [])
     var ft = new FileTransfer();
     ft.upload($scope.filepath, encodeURI("http://212.24.111.23/upload.php"), function (r) {
         console.log("Code = " + r.responseCode);
-        console.log("Response = " + r.response);
-        console.log("Sent = " + r.bytesSent);
+        console.log("Response = " + r.message);
+        //console.log("Sent = " + r.bytesSent);
+        
+        alert(r.message);
         
     }, function (error) {
         alert("An error has occurred: Code = " + error.code);
@@ -185,6 +190,7 @@ angular.module('camera.controllers', [])
     options.fileKey = "file";
     options.fileName = $scope.filepath.substr($scope.filepath.lastIndexOf('/') + 1);
     options.mimeType = "video/mp4";
+    options.chunkedMode = false;
 
     var params = {};
     // params.value1 = "test";
@@ -195,8 +201,10 @@ angular.module('camera.controllers', [])
     var ft = new FileTransfer();
     ft.upload($scope.filepath, encodeURI("http://212.24.111.23/upload.php"), function (r) {
         console.log("Code = " + r.responseCode);
-        console.log("Response = " + r.response);
-        console.log("Sent = " + r.bytesSent);
+        console.log("Response = " + r.message);
+        //console.log("Sent = " + r.bytesSent);
+        
+        alert(r.message);
         
     }, function (error) {
         alert("An error has occurred: Code = " + error.code);
