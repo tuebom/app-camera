@@ -11,8 +11,10 @@
       <li class="table-view-cell">
         <!--<img class="item" ng-src="{{cameraimage}}" style="height: 350px;"/>-->
         <img class="item" id="cameraimage" style="height: 350px;"/>
+        <div>{{filepath}}</div>
       </li>
     </ul>
   </div>
-  <a class="button-main button-block" ng-click="takePicture()">Take Photo</a>
+  <a class="button-main btn-container" ng-click="takePicture()">Take Photo</a>
+  <a class="button-main btn-container" ng-click="uploadPicture()">Upload</a>
 </div>

@@ -8,19 +8,20 @@ function showAlert(message, title) {
   }
 }
 
-var pictureSource; 
-var destinationType; 
-var mediaType;
+// var pictureSource; 
+// var destinationType; 
+// var mediaType;
 
 document.addEventListener("deviceready", init, false);
 
 function init() {
 	
-  pictureSource = navigator.camera.PictureSourceType;
-  destinationType = navigator.camera.DestinationType;
-  mediaType = navigator.camera.MediaType;
+  // pictureSource = navigator.camera.PictureSourceType;
+  // destinationType = navigator.camera.DestinationType;
+  // mediaType = navigator.camera.MediaType;
   
     document.addEventListener("backbutton", function(e){
+    
        if($.mobile.activePage.is('#homepage')){
            e.preventDefault();
            navigator.app.exitApp();
@@ -42,20 +43,10 @@ var PhoneGap = {
      deviceready: function() {
          // note that this is an event handler so the scope is that of the event
          // so we need to call app.report(), and not this.report()
+        
         //PhoneGap.report('deviceready');
-        //document.addEventListener('backbutton', this.onBackButton, false);
-
         
      }/*,
-      onBackButton: function(e) {
-        e.preventDefault();
-        
-        if (history.length > 0)
-          window.history.back();
-        } else {
-          navigator.app.exitApp();
-        }
-      }
      report: function(id) { 
          console.log("PhoneGap Report:" + id);
          // hide the .pending <p> and show the .complete <p>
@@ -100,14 +91,6 @@ app.config(function ($routeProvider) {
       templateUrl: 'partials/setting.html',
       controller: 'SettingCtrl'
     })
-    /*.when('/create', {
-      templateUrl: 'partials/create.html',
-      controller: 'CreateCtrl'
-    })
-    .when('/details/:alarmId', {
-      templateUrl: 'partials/details.html',
-      controller: 'DetailsCtrl'
-    })*/
     .otherwise({
       redirectTo: '/'
     });

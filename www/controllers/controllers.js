@@ -21,7 +21,7 @@ angular.module('camera.controllers', [])
       // };
 
       // udpate camera image directive
-      // $cordovaCamera.getPicture(options).then(function (imageData) {
+      // navigator.camera.getPicture(options).then(function (imageData) {
         // $scope.cameraimage = "data:image/jpeg;base64," + imageData;
       // }, function (err) {
         // console.log('Failed because: ');
@@ -41,9 +41,41 @@ angular.module('camera.controllers', [])
       
       var image = document.getElementById('cameraimage');
       image.src = mediaFiles[0].fullPath;
+      $scope.filepath = mediaFiles[0].fullPath;
+      
     }, function (message) {
       alert('Failed because: ' + message);
+      
     }, {limit: 1});
+  }
+
+  $scope.uploadPicture = function () {
+  
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    options.fileName = $scope.filepath.substr($scope.filepath.lastIndexOf('/') + 1);
+    options.mimeType = "image/jpeg";
+
+    var params = {};
+    // params.value1 = "test";
+    // params.value2 = "param";
+
+    options.params = params;
+
+    var ft = new FileTransfer();
+    ft.upload(fileURL, encodeURI("http://212.24.111.23/upload.php"), function (r) {
+        console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        console.log("Sent = " + r.bytesSent);
+        
+        alert(r.response);
+        
+    }, function (error) {
+        alert("An error has occurred: Code = " + error.code);
+        console.log("upload error source " + error.source);
+        console.log("upload error target " + error.target);
+        
+    }, options);
   }
 
 })
@@ -60,48 +92,116 @@ angular.module('camera.controllers', [])
       v += "</video>";
       document.querySelector("#videoArea").innerHTML = v;
       
+      $scope.filepath = s[0].fullPath;
+      
     }, function (e) {
       console.log("capture error: "+JSON.stringify(e));
+      
     }, {limit: 1});
 	};
 
+  
+  $scope.uploadVideo = function () {
+  
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    options.fileName = $scope.filepath.substr($scope.filepath.lastIndexOf('/') + 1);
+    options.mimeType = "video/mp4";
+
+    var params = {};
+    // params.value1 = "test";
+    // params.value2 = "param";
+
+    options.params = params;
+
+    var ft = new FileTransfer();
+    ft.upload(fileURL, encodeURI("http://212.24.111.23/upload.php"), function (r) {
+        console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        console.log("Sent = " + r.bytesSent);
+        
+    }, function (error) {
+        alert("An error has occurred: Code = " + error.code);
+        console.log("upload error source " + error.source);
+        console.log("upload error target " + error.target);
+        
+    }, options);
+  }
 })
 
 .controller('UploadPictureCtrl', function ($scope) {
 
-    $scope.upload = function() {
-        var options = {
-            fileKey: "avatar",
-            fileName: "filename.mp4",
-            chunkedMode: false,
-            mimeType: "video/mp4"
-        };
-        $cordovaFileTransfer.upload("http://www.samplewebsite.com/upload", "file:/storage/....mp4", options).then(function(result) {
-            console.log("SUCCESS: " + JSON.stringify(result.response));
-        }, function(err) {
-            console.log("ERROR: " + JSON.stringify(err));
-        }, function (progress) {
-            // constant progress updates
-        });
-    }
+  $scope.uploadPicture = function () {
+  
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    options.fileName = $scope.filepath.substr($scope.filepath.lastIndexOf('/') + 1);
+    options.mimeType = "image/jpeg";
 
+    var params = {};
+    // params.value1 = "test";
+    // params.value2 = "param";
+
+    options.params = params;
+
+    var ft = new FileTransfer();
+    ft.upload(fileURL, encodeURI("http://212.24.111.23/upload.php"), function (r) {
+        console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        console.log("Sent = " + r.bytesSent);
+        
+    }, function (error) {
+        alert("An error has occurred: Code = " + error.code);
+        console.log("upload error source " + error.source);
+        console.log("upload error target " + error.target);
+        
+    }, options);
+  }
 })
 .controller('UploadVideoCtrl', function ($scope) {
 
-    $scope.upload = function() {
-        var options = {
-            fileKey: "avatar",
-            fileName: "filename.mp4",
-            chunkedMode: false,
-            mimeType: "video/mp4"
-        };
-        $cordovaFileTransfer.upload("http://www.samplewebsite.com/upload", "file:/storage/....mp4", options).then(function(result) {
-            console.log("SUCCESS: " + JSON.stringify(result.response));
-        }, function(err) {
-            console.log("ERROR: " + JSON.stringify(err));
-        }, function (progress) {
+    // $scope.uplaodVideo = function() {
+        // var options = {
+            // fileKey: "avatar",
+            // fileName: "filename.mp4",
+            // chunkedMode: false,
+            // mimeType: "video/mp4"
+        // };
+        // $cordovaFileTransfer.upload("http://www.samplewebsite.com/upload", "file:/storage/....mp4", options).then(function(result) {
+            // console.log("SUCCESS: " + JSON.stringify(result.response));
+        // }, function(err) {
+            // console.log("ERROR: " + JSON.stringify(err));
+        // }, function (progress) {
             // constant progress updates
-        });
-    }
+        // });
+    // }
+
+  
+  $scope.uploadVideo = function () {
+  
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    options.fileName = $scope.filepath.substr($scope.filepath.lastIndexOf('/') + 1);
+    options.mimeType = "video/mp4";
+
+    var params = {};
+    // params.value1 = "test";
+    // params.value2 = "param";
+
+    options.params = params;
+
+    var ft = new FileTransfer();
+    ft.upload(fileURL, encodeURI("http://212.24.111.23/upload.php"), function (r) {
+        console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        console.log("Sent = " + r.bytesSent);
+        
+    }, function (error) {
+        alert("An error has occurred: Code = " + error.code);
+        console.log("upload error source " + error.source);
+        console.log("upload error target " + error.target);
+        
+    }, options);
+  }
 
 });

@@ -10,3 +10,8 @@ body {
     -webkit-highlight: none; 
     -webkit-tap-highlight-color: rgba(0,0,0,0); 
 }
+
+.btn-container {
+  width: 50%;
+  float: left;
+}

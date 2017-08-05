@@ -16,6 +16,7 @@
     <plugin name="cordova-plugin-media-capture" source="npm" />
     <!--<plugin name="cordova-plugin-save-image" source="npm" />-->
     <plugin name="cordova-plugin-file-transfer" source="npm" />
+    <plugin name="cordova-plugin-backbutton" source="npm" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.1" />
     <!--<plugin name="cordova-plugin-camera" source="npm" />
     <plugin name="cordova-plugin-device" source="npm" />
