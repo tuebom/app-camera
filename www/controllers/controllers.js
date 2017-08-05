@@ -52,7 +52,7 @@ angular.module('camera.controllers', [])
   $scope.uploadPicture = function () {
   
     var options = new FileUploadOptions();
-    options.fileKey = "file";
+    options.fileKey = "userfile";
     options.fileName = $scope.filepath.substr($scope.filepath.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
     options.chunkedMode = false;
