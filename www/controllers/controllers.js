@@ -42,6 +42,7 @@ angular.module('camera.controllers', [])
       var image = document.getElementById('cameraimage');
       image.src = mediaFiles[0].fullPath;
       $scope.filepath = mediaFiles[0].fullPath;
+      $scope.$apply();
       
     }, function (message) {
       alert('Failed because: ' + message);
@@ -62,9 +63,11 @@ angular.module('camera.controllers', [])
     // params.value2 = "param";
 
     options.params = params;
+    
+    alert($scope.filepath);
 
     var ft = new FileTransfer();
-    ft.upload($scope.filepath, encodeURI("http://212.24.111.23/upload.php"), function (r) { //fileURL
+    ft.upload(encodeURI($scope.filepath), encodeURI("http://212.24.111.23/upload.php"), function (r) { //fileURL
         console.log("Code = " + r.response.responseCode);
         console.log("Response = " + r.response.message);
         //console.log("Sent = " + r.bytesSent);
